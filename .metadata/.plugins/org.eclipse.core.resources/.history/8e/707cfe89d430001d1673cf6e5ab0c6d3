@@ -1,0 +1,68 @@
+/*
+ ============================================================================
+ Name        : Clase.c
+ Author      : Erika Alcon Div 1J
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char mostrarMenu();
+
+int main(void) {
+	setbuf(stdout, NULL);
+	char opcion;
+	char confirmacion;
+	int flag;
+
+	flag = 0;
+
+	opcion = mostrarMenu();
+
+	do{
+		switch(opcion)
+		{
+			case 'a':
+				printf("Iniciando...\n");
+				flag = 1;
+				break;
+			case 'b':
+				if(flag == 0)
+				{
+					printf("Debe Iniciar antes de Procesar\n");
+				}
+				else
+				{
+					printf("Procesando...\n");
+				}
+				break;
+			case 'c':
+				printf("Debe Iniciar antes de Finalizar\n");
+				break;
+			case 'd':
+				printf("esta seguro que desea salir? s/n\n");
+				fflush(stdin);
+				scanf("%c", &confirmacion);
+				break;
+		}
+	}while(confirmacion != 's');
+
+	return EXIT_SUCCESS;
+}
+
+char mostrarMenu()
+{
+	char opcion;
+
+	printf("a-Iniciar\n");
+	printf("b-Procesar\n");
+	printf("c-Finalizar\n");
+	printf("d-Salir\n");
+	scanf("%c", &opcion);
+
+	return opcion;
+}

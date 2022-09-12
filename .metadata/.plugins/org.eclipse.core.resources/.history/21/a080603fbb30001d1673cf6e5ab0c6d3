@@ -1,0 +1,56 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : Erika Alcon Div 1J
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int sumarRestar(int a, int b);
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	int numero1;
+	int numero2;
+	char operacion;
+
+	do{
+		printf("ingrese el primer numero entre 10 y 100");
+		scanf("%d", &numero1);
+	}while(!(numero1 > 9 && numero1 < 101));
+
+	do{
+		printf("ingrese el segundo numero entre 10 y 100");
+		scanf("%d", &numero2);
+	}while(!(numero2 > 9 && numero2 < 101));
+
+	do{
+	    operacion = prompt("ingrese tipo de operacion: r/s (Sumar/restar)");
+	    scanf("%c", &operacion);
+	}while(operacion!= "c" && operacion!="d");
+
+	return EXIT_SUCCESS;
+}
+
+int sumarRestar(int a, int b, char c)
+{
+	int suma;
+	int resta;
+
+	if(c == 's')
+	{
+		suma = a + b;
+	}
+	else
+	{
+		resta = a - b;
+	}
+
+	return 0;
+}

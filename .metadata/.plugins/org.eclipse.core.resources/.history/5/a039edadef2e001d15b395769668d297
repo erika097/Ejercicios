@@ -1,0 +1,52 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	int legajo;
+	char estadoCivil;
+	int edad;
+	int anioIngreso;
+	//char genero;
+	//int precioLibreta;
+	char seguir;
+
+	do{
+		do{
+			printf("ingrese el numero de legajo");
+			scanf("%d", &legajo);
+		}while(!(legajo > 999 && legajo < 10000));
+
+		do{
+			printf("ingrese estado civil");
+			scanf("%c", &estadoCivil);
+		}while(estadoCivil != 's' && estadoCivil != 'c' && estadoCivil != 'v');
+
+		do{
+			printf("ingrese edad");
+			scanf("%d", &edad);
+		}while(edad < 17);
+
+		do{
+			printf("ingrese año de ingreso");
+			scanf("%d", &anioIngreso);
+		}while(edad < 1950);
+
+		printf("desea continuar? s/n");
+		fflush(stdin);
+		scanf("%c", &seguir);
+	}while(seguir == 's');
+
+	return EXIT_SUCCESS;
+}

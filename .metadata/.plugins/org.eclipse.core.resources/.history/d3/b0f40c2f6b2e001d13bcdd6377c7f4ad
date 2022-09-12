@@ -1,0 +1,75 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	int numero;
+	char seguir;
+	float promPositivos;
+	float promNegativos;
+	int acumuladorPositivos;
+	int acumuladorNegativos;
+	int contadorPositivos;
+	int contadorNegativos;
+	int minPositivo;
+	int maxNegativo;
+	int flagMin;
+	int flagMax;
+
+	acumuladorPositivos = 0;
+	acumuladorNegativos = 0;
+	contadorPositivos = 0;
+	contadorNegativos = 0;
+	seguir ='s';
+	flagMin = 0;
+	flagMax = 0;
+
+	do{
+		printf("ingrese numeros enteros");
+		scanf("%d", &numero);
+
+		if(numero > 0)
+		{
+			acumuladorPositivos = acumuladorPositivos + numero;
+			contadorPositivos++;
+			if(flagMin == 0 || numero < minPositivo)
+			{
+				minPositivo = numero;
+				flagMin = 1;
+			}
+		}
+
+		if(numero < 0)
+		{
+			acumuladorNegativos = acumuladorNegativos + numero;
+			contadorNegativos++;
+			if(flagMax == 0 || numero > minPositivo)
+			{
+				maxNegativo = numero;
+				flagMax = 1;
+			}
+		}
+
+		printf("desea continuar? s/n");
+		scanf("%c", &seguir);
+	}while(seguir == 's');
+
+	promPositivos = acumuladorPositivos / contadorPositivos;
+	promNegativos = acumuladorNegativos / contadorNegativos;
+
+	printf("el promedio de los positivos es %f y su minimo es %d", promPositivos, minPositivo);
+	printf("\nel promedio de los negativos es %f y su maximo es %d", promNegativos, maxNegativo);
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,101 @@
+/*
+ ============================================================================
+ Name        : Clase.c
+ Author      : Erika Alcon Div 1J
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char mostrarMenu();
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	char opcion;
+	char confirmacion;
+	int flag;
+	int flag2;
+
+	flag = 0;
+	flag2 = 0;
+	confirmacion = 'n';
+
+	opcion = mostrarMenu();
+
+	do{
+
+
+		switch(opcion)
+		{
+			case 'a':
+
+				printf("Iniciando...\n");
+				flag = 1;
+				opcion = mostrarMenu();
+				break;
+			case 'b':
+
+				if(flag == 0)
+				{
+					printf("Debe Iniciar antes de Procesar\n");
+					opcion = mostrarMenu();
+				}
+				else
+				{
+					printf("Procesando...\n");
+					flag2 = 1;
+					opcion = mostrarMenu();
+				}
+
+				break;
+			case 'c':
+
+				if(flag2 == 0)
+				{
+					printf("Debe Procesar antes de Finalizar\n");
+					opcion = mostrarMenu();
+				}
+				else
+				{
+					printf("Finalizo con exito\n");
+					opcion = mostrarMenu();
+				}
+				opcion = mostrarMenu();
+				break;
+			case 'd':
+
+				do{
+					printf("Esta seguro que desea salir? s/n\n");
+					fflush(stdin);
+					scanf("%c", &confirmacion);
+				}while(confirmacion != 's' && confirmacion != 'n');
+
+				if(confirmacion == 'n')
+				{
+					opcion = mostrarMenu();
+				}
+
+				break;
+		}
+	}while(confirmacion == 'n');
+
+	return EXIT_SUCCESS;
+}
+
+char mostrarMenu()
+{
+	char opcion;
+
+	printf("a-Iniciar\n");
+	printf("b-Procesar\n");
+	printf("c-Finalizar\n");
+	printf("d-Salir\n");
+	scanf("%c", &opcion);
+
+	return opcion;
+}

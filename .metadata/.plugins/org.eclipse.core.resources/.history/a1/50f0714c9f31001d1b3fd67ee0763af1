@@ -1,0 +1,41 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : Erika Alcon Div 1J
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int pedirNumero();
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	int numero;
+	int factorial = 1;
+	int i = 0;
+
+	numero = pedirNumero();
+
+	for(i = 0; i <= numero; i++)
+	{
+		factorial = factorial * i;
+	}
+
+
+	return EXIT_SUCCESS;
+}
+
+int pedirNumero()
+{
+	int ingresoNumero;
+	printf("ingrese un numero: ");
+	scanf("%d", &ingresoNumero);
+
+	return ingresoNumero;
+}

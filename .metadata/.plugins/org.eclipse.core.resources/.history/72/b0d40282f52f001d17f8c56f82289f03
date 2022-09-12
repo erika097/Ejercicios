@@ -1,0 +1,50 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int restar2();
+int pedirNumero();
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	int resta;
+
+	resta = restar2();
+
+	printf("la resta da: %d", resta);
+
+	return EXIT_SUCCESS;
+}
+
+int restar2()
+{
+	int numero1;
+	int numero2;
+	int resta;
+
+	numero1 = pedirNumero();
+	numero2 = pedirNumero();
+
+	resta = numero1 - numero2;
+
+	return resta;
+}
+
+int pedirNumero()
+{
+	int ingresoNumero;
+	printf("ingrese un numero: ");
+	scanf("%d", &ingresoNumero);
+
+	return ingresoNumero;
+}

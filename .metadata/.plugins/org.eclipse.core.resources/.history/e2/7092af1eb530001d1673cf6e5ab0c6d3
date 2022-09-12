@@ -1,0 +1,33 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : Erika Alcon Div 1J
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int realizarDescuento();
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	int numero1;
+
+	printf("ingrese un numero entre 10 y 100");
+	scanf("%d", &numero1);
+
+
+
+
+	return EXIT_SUCCESS;
+}
+
+int realizarDescuento()
+{
+
+}

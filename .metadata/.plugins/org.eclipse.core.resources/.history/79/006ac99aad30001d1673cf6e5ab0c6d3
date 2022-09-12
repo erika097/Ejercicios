@@ -1,0 +1,43 @@
+/*
+ ============================================================================
+ Name        : Ejercicio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void mostrarNumero(int num);
+int pedirNumero();
+
+int main(void) {
+	setbuf(stdout, NULL);
+	int numero;
+
+	numero = pedirNumero();
+	mostrarNumero(numero);
+
+	return EXIT_SUCCESS;
+}
+
+void mostrarNumero(int num)
+{
+	printf("el numero que ingresaste es: %d", num);
+	return;
+}
+
+int pedirNumero()
+{
+	int numero;
+
+	do{
+		printf("ingrese un numero decimal entre 0 y 10");
+		scanf("%d", &numero);
+	}while(!(numero >= 0 && numero <= 10));
+
+	return numero;
+}

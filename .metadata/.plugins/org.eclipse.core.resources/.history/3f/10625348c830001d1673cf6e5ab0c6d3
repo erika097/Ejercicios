@@ -1,0 +1,26 @@
+/*
+ * operaciones.c
+ *
+ *  Created on: 10 sep. 2022
+ *      Author: Charvis
+ */
+
+int sumarRestar(int a, int b, char c)
+{
+	int suma;
+	int resta;
+	int resultado;
+
+	if(c == 's')
+	{
+		suma = a + b;
+		resultado = suma;
+	}
+	else
+	{
+		resta = a - b;
+		resultado = resta;
+	}
+
+	return resultado;
+}
