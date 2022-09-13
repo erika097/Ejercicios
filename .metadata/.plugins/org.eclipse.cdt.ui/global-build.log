@@ -1,5 +1,6 @@
-14:20:54 **** Rebuild of configuration Debug for project 1-Prueba para Git ****
+00:25:44 **** Incremental Build of configuration Debug for project Ejercicio 4-3 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\1-Prueba para Git.o" "..\\src\\1-Prueba para Git.c" 
-gcc -o "1-Prueba para Git.exe" "src\\1-Prueba para Git.o" 
-Info: Nothing to build for 1-Prueba para Git
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\conversiones.o" "..\\src\\conversiones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Ejercicio 4-3.o" "..\\src\\Ejercicio 4-3.c" 
+gcc -o "Ejercicio 4-3.exe" "src\\Ejercicio 4-3.o" "src\\conversiones.o" "src\\validaciones.o" 
+Info: Nothing to build for Ejercicio 4-3
